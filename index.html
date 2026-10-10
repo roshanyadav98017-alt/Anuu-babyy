@@ -1,1 +1,50 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Anuuu Baby 💗</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;font-family:Arial,sans-serif;color:white;background:linear-gradient(135deg,#ff758c,#ff7eb3,#a18cd1);overflow-x:hidden}
+.card{margin:20px;padding:30px 20px;border-radius:25px;background:#ffffff25;box-shadow:0 10px 40px #0002;backdrop-filter:blur(8px);max-width:420px}
+h1{font-size:2.2rem}
+.heart{font-size:55px;animation:beat .8s infinite}
+button{padding:14px 22px;border:0;border-radius:30px;background:#fff;color:#e84375;font-size:17px;font-weight:bold;margin:8px;cursor:pointer}
+#surprise{display:none;font-size:20px;line-height:1.7}
+.float{position:fixed;bottom:-40px;animation:rise 6s linear infinite;pointer-events:none}
+@keyframes beat{50%{transform:scale(1.2)}}
+@keyframes rise{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="heart">💗</div>
+<h1>Happy Birthday<br>Anuuu Baby 🎂</h1>
+<p>For my most special best friend 🥹💕</p>
+<button onclick="showLove()">Open Your Surprise 🎁</button>
+<div id="surprise">
+<p>🎉 Happy Birthday meri pyaari Anuuu! 💖</p>
+<p>Teri smile hamesha aise hi rahe, teri life khushiyon se bhari rahe. 🫶✨</p>
+<p>Tu sirf best friend nahi, ek special person hai! 💗</p>
+<p>— From Roshan ❤️</p>
+</div>
+</div>
+<script>
+function showLove(){
+document.getElementById('surprise').style.display='block';
+for(let i=0;i<35;i++){
+let h=document.createElement('span');
+h.className='float';
+h.textContent=['💗','💕','✨','🎉','💖'][Math.floor(Math.random()*5)];
+h.style.left=Math.random()*100+'vw';
+h.style.animationDelay=Math.random()*3+'s';
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),7000);
+}
+}
+</script>
+</body>
+</html>
+
