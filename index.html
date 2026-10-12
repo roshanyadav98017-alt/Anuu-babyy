@@ -1,50 +1,142 @@
 
+<!
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Anuuu Baby 💗</title>
+<title>Anuuu Baby 💗 | Birthday Surprise</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;font-family:Arial,sans-serif;color:white;background:linear-gradient(135deg,#ff758c,#ff7eb3,#a18cd1);overflow-x:hidden}
-.card{margin:20px;padding:30px 20px;border-radius:25px;background:#ffffff25;box-shadow:0 10px 40px #0002;backdrop-filter:blur(8px);max-width:420px}
-h1{font-size:2.2rem}
-.heart{font-size:55px;animation:beat .8s infinite}
-button{padding:14px 22px;border:0;border-radius:30px;background:#fff;color:#e84375;font-size:17px;font-weight:bold;margin:8px;cursor:pointer}
-#surprise{display:none;font-size:20px;line-height:1.7}
-.float{position:fixed;bottom:-40px;animation:rise 6s linear infinite;pointer-events:none}
-@keyframes beat{50%{transform:scale(1.2)}}
-@keyframes rise{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+body{
+ margin:0;font-family:Arial,sans-serif;color:white;text-align:center;
+ background:linear-gradient(145deg,#180819,#35102e,#100d20);
+ min-height:100vh;overflow-x:hidden
+}
+header{padding:22px 12px;color:#ff9dd8;font-size:22px;font-weight:bold}
+.hero{padding:22px 18px 45px}
+.heart{font-size:65px;animation:beat 1s infinite}
+h1{font-size:clamp(32px,8vw,48px);color:#ff9bd9;margin:15px 0}
+p{line-height:1.7;color:#f9dcec}
+.card{
+ margin:18px auto;padding:25px 18px;max-width:520px;
+ background:#ffffff10;border:1px solid #ff8ed755;
+ border-radius:24px;box-shadow:0 0 28px #ff36a522
+}
+button{
+ border:0;border-radius:30px;padding:14px 22px;margin:7px;
+ font-size:15px;font-weight:bold;cursor:pointer;color:white;
+ background:linear-gradient(90deg,#ff399d,#b94bff)
+}
+button:active{transform:scale(.96)}
+#letter{display:none}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.photo{
+ min-height:115px;border-radius:17px;background:linear-gradient(145deg,#78245d,#321849);
+ display:flex;flex-direction:column;align-items:center;justify-content:center;
+ font-size:43px;border:1px solid #ff9bd955
+}
+.photo small{font-size:12px;color:#ffe0f2;margin-top:8px}
+.float{
+ position:fixed;bottom:-30px;pointer-events:none;z-index:5;
+ animation:rise 7s linear forwards
+}
+@keyframes beat{50%{transform:scale(1.15)}}
+@keyframes rise{to{transform:translateY(-110vh) rotate(35deg);opacity:0}}
+footer{padding:25px;color:#ffb6df;font-size:13px}
 </style>
 </head>
 <body>
-<div class="card">
-<div class="heart">💗</div>
-<h1>Happy Birthday<br>Anuuu Baby 🎂</h1>
-<p>For my most special best friend 🥹💕</p>
-<button onclick="showLove()">Open Your Surprise 🎁</button>
-<div id="surprise">
-<p>🎉 Happy Birthday meri pyaari Anuuu! 💖</p>
-<p>Teri smile hamesha aise hi rahe, teri life khushiyon se bhari rahe. 🫶✨</p>
-<p>Tu sirf best friend nahi, ek special person hai! 💗</p>
-<p>— From Roshan ❤️</p>
-</div>
-</div>
+<header>💗 A Little Surprise For You 💗</header>
+
+<section class="hero">
+ <div class="heart">💖</div>
+ <h1>Happy Birthday<br>Anuuu Baby!</h1>
+ <p>Aaj ka din sirf tumhare naam.<br>
+ Tumhari smile hamesha aise hi chamakti rahe! ✨</p>
+ <button onclick="reveal()">🎁 Open Your Surprise</button>
+ <button onclick="music()">🎵 Play / Pause Music</button>
+</section>
+
+<section class="card" id="letter">
+ <div style="font-size:55px">💌</div>
+ <h2 style="color:#ff9bd9">Dear Anuuu Baby 💗</h2>
+ <p>Happy Birthday, meri pyaari bestie! 🥳<br>
+ Tumhari life khushiyon, hasi aur beautiful memories se bhari rahe.
+ Tum jo bhi chaho, use paane ka mauka mile.
+ Hamesha khush rehna aur apni cute si smile kabhi mat khona! 💖</p>
+ <h3>Lots of love — Roshan ❤️</h3>
+ <div style="font-size:45px">🎂🎉🎁</div>
+</section>
+
+<section class="card">
+ <h2 style="color:#ff9bd9">📸 Memory Corner</h2>
+ <p>Yahan apni favourite photos add kar sakte ho!</p>
+ <div class="gallery">
+  <div class="photo">🌸<small>Beautiful Memories</small></div>
+  <div class="photo">🧸<small>Sweet Moments</small></div>
+  <div class="photo">🌅<small>Best Days</small></div>
+  <div class="photo">💞<small>Forever Friends</small></div>
+ </div>
+</section>
+
+<section class="card">
+ <h2 style="color:#ff9bd9">🌟 Birthday Wishes</h2>
+ <p>🎂 Cake tumhara, party tumhari!</p>
+ <p>😂 Age badhe, par nautanki kabhi kam na ho!</p>
+ <p>💖 Khushiyan milein tumhe har din, har saal!</p>
+ <button onclick="celebrate()">🎊 More Celebrations!</button>
+</section>
+
+<footer>Made with 💗 by Roshan<br>Keep Smiling, Birthday Star! ✨</footer>
+
 <script>
-function showLove(){
-document.getElementById('surprise').style.display='block';
-for(let i=0;i<35;i++){
-let h=document.createElement('span');
-h.className='float';
-h.textContent=['💗','💕','✨','🎉','💖'][Math.floor(Math.random()*5)];
-h.style.left=Math.random()*100+'vw';
-h.style.animationDelay=Math.random()*3+'s';
-document.body.appendChild(h);
-setTimeout(()=>h.remove(),7000);
+function reveal(){
+ document.getElementById('letter').style.display='block';
+ document.getElementById('letter').scrollIntoView({behavior:'smooth'});
+ celebrate();
 }
+function celebrate(){
+ const emojis=['💖','💕','✨','🎉','🌸','💗'];
+ for(let i=0;i<24;i++){
+  const e=document.createElement('span');
+  e.className='float';
+  e.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+  e.style.left=Math.random()*100+'vw';
+  e.style.animationDuration=(4+Math.random()*4)+'s';
+  e.style.fontSize=(16+Math.random()*20)+'px';
+  document.body.appendChild(e);
+  setTimeout(()=>e.remove(),8500);
+ }
 }
+let ctx=null,playing=false,timer=null,note=0;
+function music(){
+ const AC=window.AudioContext||window.webkitAudioContext;
+ if(!AC){alert('Music support nahi hai');return}
+ if(playing){
+  clearInterval(timer);playing=false;
+  if(ctx)ctx.suspend();
+  return;
+ }
+ if(!ctx)ctx=new AC();
+ ctx.resume();playing=true;
+ const melody=[523,659,784,659,587,698,880,784];
+ timer=setInterval(()=>{
+  if(!playing)return;
+  const osc=ctx.createOscillator(),gain=ctx.createGain();
+  osc.frequency.value=melody[note++%melody.length];
+  gain.gain.value=.06;osc.connect(gain);gain.connect(ctx.destination);
+  osc.start();osc.stop(ctx.currentTime+.2);
+ },300);
+}
+setInterval(()=>{
+ const h=document.createElement('span');
+ h.className='float';h.textContent='💗';
+ h.style.left=Math.random()*100+'vw';
+ h.style.animationDuration=(5+Math.random()*4)+'s';
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),9500);
+},1200);
 </script>
 </body>
 </html>
-
